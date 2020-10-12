@@ -36,7 +36,7 @@ hhp3[,10] <- as.POSIXct (hhp3[,10])
 hhp3[,10]<-as.POSIXct(paste(hhp3[,1],hhp3[,2]),"%d/%m/%Y %H:%M:%S", tz = "GMT")
 wday(hhp3[1,10],label = TRUE)
 dev.set(2)
-dev.copy(png, file = "plot2.png", width = 480, height = 480)
+png(file = "plot2.png", width = 480, height = 480)
 plot(hhp3[,10],hhp3[,3] ,type = "l",xlab = "",ylab = "Gloabl Active Power (kilowatts)" )
 #lines(hhp3[,10],hhp3[,3], type = "l")
 
