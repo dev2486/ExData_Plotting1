@@ -12,11 +12,7 @@ pryr::mem_used()
 #memory available
 memory.size()
 
-#understanding data
-head(hhp1)
-dim(hhp1)
-nrow(hhp1)
-
+#select dates
 match1<-grep("^1/2/2007$|^2/2/2007$", hhp1$Date)
 hhp2<-hhp1[match1,]  
 dim(hhp2)
@@ -31,7 +27,7 @@ for (i in 3 : ncol(hhp1)) class(hhp3[,i])="numeric"
 class(hhp3[2,3])
 names(hhp3)
 dev.set(1)
-dev.copy(png, file = "plot1.png", width = 480, height = 480)
+png(file = "plot1.png", width = 480, height = 480)
 dev.cur()
 with(hhp3, hist(hhp3[,3],freq = TRUE, col = "red",xlab = "Global Active Power (kilowatts)", main = "Global Active Power" ))
 
